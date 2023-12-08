@@ -8,13 +8,24 @@ function App() {
 
   const[userInput, setUserInput]=useState('')
   const cloud = useRef(getCloud())
+  const [activeWordIndex, setactiveWordIndex]=useState(0)
   
 
   return (
     <div>
       <h1>typing test</h1>
 
-      <p>{cloud.current.join(' ')} </p>
+      <p>{cloud.current.map((word, index)=>{
+        if(index===activeWordIndex){
+          return <b>{word} </b>
+        }
+        // return <span key={index}>{word}</span>
+        return <span>{word} </span> 
+          
+      
+      
+      
+      })} </p>
 
       <input 
         type="text" 
