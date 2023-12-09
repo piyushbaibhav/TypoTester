@@ -14,7 +14,7 @@ const getCloud = (count = 40) => {
 function RestartButton({ onClick }) {
   return (
     <button
-      className="bg-blue-600  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      className="  hover:underline underline-offset-8 text-white font-bold py-2 px-4 rounded"
       onClick={onClick}
     >
       Retry
@@ -24,7 +24,7 @@ function RestartButton({ onClick }) {
 function ReloadButton({ onClick }) {
   return (
     <button
-      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+      className=" hover:underline underline-offset-8 text-white font-bold py-2 px-4 rounded"
       onClick={onClick}
     >
       Restart
