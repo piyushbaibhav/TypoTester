@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 
 function Timer(props) {
@@ -19,16 +18,15 @@ function Timer(props) {
     };
   }, [startCounting, remainingTime]);
 
-  const minutes = (remainingTime - timeElapsed) / 60;
-  const speed = correctWords / (minutes || 1);
+  const minutes = timeElapsed / 60;
 
   return (
     <div>
       <p>
-        <b>Time:</b> {remainingTime - timeElapsed}
+        <b>Time:</b> {remainingTime}
       </p>
       <p>
-        <b>Speed:</b> {speed.toFixed(2)} WPM
+        <b>Speed:</b> {((correctWords / minutes) || 0).toFixed(2)} WPM
       </p>
     </div>
   );
