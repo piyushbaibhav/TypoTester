@@ -20,6 +20,11 @@ function App() {
       setstartCounting(true)
     }
     if (value.endsWith(' ')) {
+      if(activeWordIndex===cloud.current.length-1){
+        setstartCounting(false)
+        setUserInput('Completed')
+        return
+      }
       setactiveWordIndex((index) => index + 1);
       setUserInput('');
 

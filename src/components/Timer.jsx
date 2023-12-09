@@ -5,10 +5,14 @@ function Timer(props) {
     const {correctWords,startCounting}=props
     const [timeElapsed, setTimeElapsed] = useState(0)
     useEffect(()=>{
+        let id
         if(startCounting){
-            setInterval(()=>{
+            id=setInterval(()=>{
                 setTimeElapsed(oldTime=>oldTime+1)
             },1000)
+        }
+        return()=>{
+            clearInterval(id)
         }
 
     },[startCounting])
