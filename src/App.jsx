@@ -1,7 +1,7 @@
-// App.js
+
 import React, { useRef, useState } from 'react';
-import Word from './components/Word'; // Import the Word component
-import Timer from './components/Timer'; // Import the Timer component
+import Word from './components/Word'; 
+import Timer from './components/Timer'; 
 import './App.css';
 
 const getCloud = () =>
@@ -10,10 +10,15 @@ const getCloud = () =>
 function App() {
   const [userInput, setUserInput] = useState('');
   const cloud = useRef(getCloud());
+  const [startCounting, setstartCounting] = useState(false)
   const [activeWordIndex, setactiveWordIndex] = useState(0);
   const [correctWordArray, setCorrectWordArray] = useState([]);
 
   function processInput(value) {
+
+    if(!startCounting){
+      setstartCounting(true)
+    }
     if (value.endsWith(' ')) {
       setactiveWordIndex((index) => index + 1);
       setUserInput('');
@@ -32,7 +37,9 @@ function App() {
   return (
     <div>
       <h1>typing test</h1>
-      <Timer />
+      <Timer
+        startCounting={startCounting}
+      />
 
       <p>
         {cloud.current.map((word, index) => (
