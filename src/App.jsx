@@ -39,6 +39,7 @@ function App() {
       <h1>typing test</h1>
       <Timer
         startCounting={startCounting}
+        correctWords={correctWordArray.filter(Boolean).length}
       />
 
       <p>

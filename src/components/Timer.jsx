@@ -2,20 +2,21 @@
 import React, { useEffect, useState } from 'react';
 
 function Timer(props) {
+    const {correctWords,startCounting}=props
     const [timeElapsed, setTimeElapsed] = useState(0)
     useEffect(()=>{
-        if(props.startCounting){
+        if(startCounting){
             setInterval(()=>{
                 setTimeElapsed(oldTime=>oldTime+1)
             },1000)
         }
 
-    },[props.startCounting])
+    },[startCounting])
   
-
+  const minutes= timeElapsed/60
   return <div>
              <p>Time: {timeElapsed} </p>
-             <p>Speed: {} </p>
+             <p>Speed: {(correctWords/minutes) || 0} WPM </p>
          </div>
 }
 
