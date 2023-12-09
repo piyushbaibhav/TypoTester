@@ -55,20 +55,27 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>typing test</h1>
-      <Timer
-        startCounting={startCounting}
-        correctWords={correctWordArray.filter(Boolean).length}
-      />
-
-      <p>
+    <div className='flex flex-col justify-center items-center h-screen'>
+      <h1 className='text-2xl'>typing test</h1>
+      <div className='mb-4'>
+        <Timer
+          startCounting={startCounting}
+          correctWords={correctWordArray.filter(Boolean).length}
+        />
+      </div>
+      <p className='text-lg mb-4'>
         {cloud.current.map((word, index) => (
           <Word key={index} text={word} active={index === activeWordIndex} correct={correctWordArray[index]} />
         ))}
       </p>
 
-      <input placeholder="Start typing..." type='text' value={userInput} onChange={(e) => processInput(e.target.value)} />
+      <input 
+      className='w-full px-2 py-1 border-gray-300 rounded text-lg'
+      placeholder="Start typing..." 
+      type='text' 
+      value={userInput} 
+      onChange={(e) => processInput(e.target.value)}
+      />
     </div>
   );
 }
