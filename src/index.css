@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family: 'Poppins', sans-serif;
   line-height: 3;
   font-weight: 400;
@@ -17,5 +17,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* @media screen and (min-width: 640px) {
+  body {
+    overflow: visible;
+  }
+} */
 
 
