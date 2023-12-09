@@ -19,15 +19,16 @@ function Timer(props) {
     };
   }, [startCounting, remainingTime]);
 
-  const minutes = remainingTime / 60;
+  const minutes = (remainingTime - timeElapsed) / 60;
+  const speed = correctWords / (minutes || 1);
 
   return (
     <div>
       <p>
-        <b>Time:</b> {remainingTime}
+        <b>Time:</b> {remainingTime - timeElapsed}
       </p>
       <p>
-        <b>Speed:</b> {((correctWords / minutes) || 0).toFixed(2)} WPM
+        <b>Speed:</b> {speed.toFixed(2)} WPM
       </p>
     </div>
   );
