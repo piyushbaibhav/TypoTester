@@ -11,6 +11,17 @@ const getCloud = (count = 40) => {
   return words.split(' ');
 };
 
+function RestartButton({ onClick }) {
+  return (
+    <button
+      className="bg-blue-600  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      onClick={onClick}
+    >
+      Restart
+    </button>
+  );
+}
+
 function App() {
   const [userInput, setUserInput] = useState('');
   const cloud = useRef(getCloud());
@@ -19,6 +30,8 @@ function App() {
   const [correctWordArray, setCorrectWordArray] = useState([]);
   const [selectedMode, setSelectedMode] = useState(15);
   const [remainingTime, setRemainingTime] = useState(selectedMode);
+
+  
 
   useEffect(() => {
     let timer;
@@ -72,6 +85,14 @@ function App() {
     setStartCounting(false); // Reset the counting when mode changes
   };
 
+  const handleRestart = () => {
+    setUserInput('');
+    setStartCounting(false);
+    setactiveWordIndex(0);
+    setCorrectWordArray([]);
+    setRemainingTime(selectedMode);
+  };
+
   return (
     <div className="flex flex-col  items-center h-screen">
       <h1 className="text-5xl font-extrabold mb-4 pb-11"style={{ color: 'rgb(140 141 217)' }}>Typing Test</h1>
@@ -90,12 +111,13 @@ function App() {
         ))}
       </p>
       <input
-        className="w-full px-2 py-1  border-gray-300 rounded text-lg text-blue-200"
+        className="w-full px-2 py-1  border-gray-300 rounded text-lg text-blue-200 mb-4"
         placeholder="Start typing..."
         type="text"
         value={userInput}
         onChange={(e) => processInput(e.target.value)}
       />
+      <RestartButton onClick={handleRestart} />
     </div>
   );
 }
