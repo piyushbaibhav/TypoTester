@@ -134,6 +134,7 @@ function App() {
         type="text"
         value={userInput}
         onChange={(e) => processInput(e.target.value)}
+        // autoFocus={false} 
       />
       <div className='flex-none my-4 '>
         <RestartButton onClick={handleRestart} />

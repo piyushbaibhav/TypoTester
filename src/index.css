@@ -22,5 +22,8 @@
     overflow: visible;
   }
 } */
+.flex-col {
+  height: 100vh; 
+}
 
 
