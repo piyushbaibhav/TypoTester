@@ -10,14 +10,14 @@ function Word(props){
   const {text, active, correct }= props
 
   if(correct===true){
-    return <span className='italic bg-green-400' >{text} </span>
+    return <span className='font-bold text-green-500 bg-black' >{text} </span>
   }
   if(correct===false){
-    return <span className='italic text-lg bg-red-400' >{text} </span>
+    return <span className='font-bold text-red-500 bg-black' >{text} </span>
   }
 
   if(active){
-    return <span className='italic bg-yellow-400' >{text} </span>
+    return <span className='font-bold' >{text} </span>
   }
 
 
@@ -29,11 +29,22 @@ function App() {
   const[userInput, setUserInput]=useState('')
   const cloud = useRef(getCloud())
   const [activeWordIndex, setactiveWordIndex]=useState(0)
+  const [correctWordArray, setCorrectWordArray]=useState([])
 
   function processInput(value){
     if (value.endsWith(' ')){
       setactiveWordIndex(index=>index+1)
       setUserInput('')
+
+      
+      //corect word
+      setCorrectWordArray(data=>{
+          const word = value.trim()
+          const newResult=[...data]
+          newResult[activeWordIndex]=word===cloud.current[activeWordIndex]
+          return newResult
+        })
+      
     }else{
       setUserInput(value)
     }
@@ -48,7 +59,7 @@ function App() {
         return <Word 
                 text = {word}
                 active={index===activeWordIndex}
-                correct={null}
+                correct={correctWordArray[index]}
                 />
       
       
