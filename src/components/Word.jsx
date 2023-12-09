@@ -3,6 +3,11 @@ import React from 'react';
 
 function Word(props) {
   const { text, active, correct } = props;
+  const styles = {
+    // fontWeight: correct ? 'bold' : 'normal',
+    // color: correct ? 'green' : 'red',
+    textDecoration: active ? 'underline' : 'none', // Add underline style when active
+  };
 
   if (correct === true) {
     return <span className='font-bold text-green-500 '>{text} </span>;
@@ -12,7 +17,7 @@ function Word(props) {
   }
 
   if (active) {
-    return <span className='font-bold'>{text} </span>;
+    return <span style={styles}>{text} </span>;
   }
 
   return <span>{text} </span>;
