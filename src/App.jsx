@@ -7,10 +7,21 @@ const getCloud = () => `coding piyush react nextjs mongodb frontend backend clou
 
 function Word(props){
 
-  const {text, active}= props
-  return <span style={{
-    fontWeight: active?'bold':'normal'
-  }} >{text} </span>
+  const {text, active, correct }= props
+
+  if(correct===true){
+    return <span className='italic bg-green-400' >{text} </span>
+  }
+  if(correct===false){
+    return <span className='italic text-lg bg-red-400' >{text} </span>
+  }
+
+  if(active){
+    return <span className='italic bg-yellow-400' >{text} </span>
+  }
+
+
+  return <span>{text} </span>
 }
 
 function App() {
@@ -37,6 +48,7 @@ function App() {
         return <Word 
                 text = {word}
                 active={index===activeWordIndex}
+                correct={null}
                 />
       
       
