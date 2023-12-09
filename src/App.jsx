@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 import './App.css'
 
@@ -23,6 +23,7 @@ function Word(props){
 
   return <span>{text} </span>
 }
+Word=React.memo(Word)
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
   const [correctWordArray, setCorrectWordArray]=useState([])
 
   function processInput(value){
+    //add validation for the quiz end
+    // add word count and timer
     if (value.endsWith(' ')){
       setactiveWordIndex(index=>index+1)
       setUserInput('')
