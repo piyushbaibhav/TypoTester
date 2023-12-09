@@ -17,6 +17,16 @@ function RestartButton({ onClick }) {
       className="bg-blue-600  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       onClick={onClick}
     >
+      Retry
+    </button>
+  );
+}
+function ReloadButton({ onClick }) {
+  return (
+    <button
+      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+      onClick={onClick}
+    >
       Restart
     </button>
   );
@@ -92,6 +102,13 @@ function App() {
     setCorrectWordArray([]);
     setRemainingTime(selectedMode);
   };
+  const handleReloadWords = () => {
+    cloud.current = getCloud();
+    setactiveWordIndex(0);
+    setUserInput('');
+    setStartCounting(false);
+    setCorrectWordArray([]);
+  };
 
   return (
     <div className="flex flex-col  items-center h-screen">
@@ -117,7 +134,10 @@ function App() {
         value={userInput}
         onChange={(e) => processInput(e.target.value)}
       />
-      <RestartButton onClick={handleRestart} />
+      <div className='flex-none my-4 '>
+        <RestartButton onClick={handleRestart} />
+        <ReloadButton onClick={handleReloadWords} />
+      </div>
     </div>
   );
 }
