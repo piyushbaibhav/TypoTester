@@ -5,10 +5,10 @@ function Word(props) {
   const { text, active, correct } = props;
 
   if (correct === true) {
-    return <span className='font-bold text-green-500 bg-black'>{text} </span>;
+    return <span className='font-bold text-green-500 '>{text} </span>;
   }
   if (correct === false) {
-    return <span className='font-bold text-red-500 bg-black'>{text} </span>;
+    return <span className='font-bold text-red-500 '>{text} </span>;
   }
 
   if (active) {
