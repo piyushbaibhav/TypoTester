@@ -5,6 +5,7 @@ import Timer from './components/Timer';
 import ModeSelection from './components/ModeSelection';
 import './App.css';
 import { generate } from 'random-words';
+import Footer from './components/Footer';
 
 const getCloud = (count = 40) => {
   const words = generate({ exactly: count, join: ' ' });
@@ -112,7 +113,7 @@ function App() {
 
   return (
     <div className="flex flex-col  items-center h-screen">
-      <h1 className="text-5xl font-extrabold mb-4 pb-11"style={{ color: 'rgb(140 141 217)' }}>Typing Test</h1>
+      <h1 className="text-5xl font-extrabold mb-4 pb-11"style={{ color: 'rgb(140 141 217)' }}>Typo Tester</h1>
       <ModeSelection onSelectMode={handleModeSelection} />
       <div className="mb-8">
         <Timer
@@ -138,6 +139,7 @@ function App() {
         <RestartButton onClick={handleRestart} />
         <ReloadButton onClick={handleReloadWords} />
       </div>
+      <Footer/>
     </div>
   );
 }
