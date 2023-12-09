@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  overflow: hidden;
   font-family: 'Poppins', sans-serif;
   line-height: 3;
   font-weight: 400;
