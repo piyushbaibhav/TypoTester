@@ -3,9 +3,16 @@ import React, { useRef, useState } from 'react';
 import Word from './components/Word'; 
 import Timer from './components/Timer'; 
 import './App.css';
+import { generate, count } from "random-words";
 
-const getCloud = () =>
-  `coding piyush react nextjs mongodb frontend backend cloud devops faang placement javascript gate happy wood world blanket house car`.split(' ').sort(()=> Math.random()>0.5?1:-1)
+
+
+// const getCloud = () =>
+//   `coding piyush react nextjs mongodb frontend backend cloud devops faang placement javascript gate happy wood world blanket house car`.split(' ').sort(()=> Math.random()>0.5?1:-1)
+const getCloud = (count = 40) => {
+  const words = generate({ exactly: count, join: ' ' });
+  return words.split(' ');
+};
 
 function App() {
   const [userInput, setUserInput] = useState('');
@@ -13,6 +20,7 @@ function App() {
   const [startCounting, setstartCounting] = useState(false)
   const [activeWordIndex, setactiveWordIndex] = useState(0);
   const [correctWordArray, setCorrectWordArray] = useState([]);
+
 
   function processInput(value) {
 
