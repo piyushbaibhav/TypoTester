@@ -16,6 +16,11 @@ function App() {
 
   function processInput(value) {
 
+    
+    if(activeWordIndex===cloud.current.length){
+      //stop
+      return
+    }
     if(!startCounting){
       setstartCounting(true)
     }
@@ -23,10 +28,12 @@ function App() {
       if(activeWordIndex===cloud.current.length-1){
         setstartCounting(false)
         setUserInput('Completed')
-        return
+        
+      }else{
+        setUserInput('')
       }
       setactiveWordIndex((index) => index + 1);
-      setUserInput('');
+      
 
       setCorrectWordArray((data) => {
         const word = value.trim();
@@ -53,7 +60,7 @@ function App() {
         ))}
       </p>
 
-      <input type='text' value={userInput} onChange={(e) => processInput(e.target.value)} />
+      <input placeholders="Start typing..." type='text' value={userInput} onChange={(e) => processInput(e.target.value)} />
     </div>
   );
 }
