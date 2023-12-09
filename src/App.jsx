@@ -73,8 +73,8 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <h1 className="text-2xl">Typing Test</h1>
+    <div className="flex flex-col  items-center h-screen">
+      <h1 className="text-4xl font-bold mb-4 pb-11">Typing Test</h1>
       <ModeSelection onSelectMode={handleModeSelection} />
       <div className="mb-4">
         <Timer startCounting={startCounting} correctWords={correctWordArray.filter(Boolean).length} remainingTime={remainingTime} />
