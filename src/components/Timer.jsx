@@ -16,7 +16,7 @@ function Timer(props) {
   const minutes= timeElapsed/60
   return <div>
              <p>Time: {timeElapsed} </p>
-             <p>Speed: {(correctWords/minutes) || 0} WPM </p>
+             <p>Speed: {((correctWords/minutes) || 0).toFixed(2)} WPM </p>
          </div>
 }
 
