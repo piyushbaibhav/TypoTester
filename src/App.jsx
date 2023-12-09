@@ -76,16 +76,21 @@ function App() {
     <div className="flex flex-col  items-center h-screen">
       <h1 className="text-5xl font-extrabold mb-4 pb-11"style={{ color: 'rgb(140 141 217)' }}>Typing Test</h1>
       <ModeSelection onSelectMode={handleModeSelection} />
-      <div className="mb-4">
-        <Timer startCounting={startCounting} correctWords={correctWordArray.filter(Boolean).length} remainingTime={remainingTime} />
+      <div className="mb-8">
+        <Timer
+          startCounting={startCounting}
+          correctWords={correctWordArray.filter(Boolean).length}
+          remainingTime={remainingTime}
+        />
       </div>
-      <p className="text-lg mb-4 my-6 px-8">
+
+      <p className="text-2xl mb-8 my-6 px-2 text-left tracking-wide "style={{ color: 'rgb(165 184 220)' }}>
         {cloud.current.map((word, index) => (
           <Word key={index} text={word} active={index === activeWordIndex} correct={correctWordArray[index]} />
         ))}
       </p>
       <input
-        className="w-full px-2 py-1 border-gray-300 rounded text-lg text-blue-200"
+        className="w-full px-2 py-1  border-gray-300 rounded text-lg text-blue-200"
         placeholder="Start typing..."
         type="text"
         value={userInput}

@@ -22,11 +22,11 @@ function Timer(props) {
 
   return (
     <div>
-      <p>
-        <b>Time:</b> {remainingTime}
+      <p className='font-medium'>
+        <b className='text-xl'>Time:</b> {remainingTime}
       </p>
-      <p>
-        <b>Speed:</b> {((correctWords / minutes) || 0).toFixed(2)} WPM
+      <p className='font-medium'>
+        <b className='text-xl'>Speed:</b> {((correctWords / minutes) || 0).toFixed(2)} WPM
       </p>
     </div>
   );
