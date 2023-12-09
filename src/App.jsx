@@ -60,7 +60,7 @@ function App() {
         ))}
       </p>
 
-      <input placeholders="Start typing..." type='text' value={userInput} onChange={(e) => processInput(e.target.value)} />
+      <input placeholder="Start typing..." type='text' value={userInput} onChange={(e) => processInput(e.target.value)} />
     </div>
   );
 }
