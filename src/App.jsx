@@ -5,7 +5,7 @@ import Timer from './components/Timer';
 import './App.css';
 
 const getCloud = () =>
-  `coding piyush react nextjs mongodb frontend backend cloud devops faang placement javascript gate happy wood world blanket house car`.split(' ');
+  `coding piyush react nextjs mongodb frontend backend cloud devops faang placement javascript gate happy wood world blanket house car`.split(' ').sort(()=> Math.random()>0.5?1:-1)
 
 function App() {
   const [userInput, setUserInput] = useState('');
