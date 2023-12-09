@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center mt-8" style={{ color: 'rgb(228 200 111)' }}>
       <a className="mr-4" href="https://github.com/piyushbaibhav" target="_blank" rel="noopener noreferrer">
         GitHub
       </a>
