@@ -115,6 +115,7 @@ function App() {
     setactiveWordIndex(0);
     setCorrectWordArray([]);
     setRemainingTime(selectedMode);
+    setTotalWordsAttempted(0); 
   };
   const handleReloadWords = () => {
     cloud.current = getCloud(selectedMode === 90 ? 80 : 40); // increase word count to 80
@@ -123,6 +124,7 @@ function App() {
     setStartCounting(false);
     setCorrectWordArray([]);
     setRemainingTime(selectedMode);
+    setTotalWordsAttempted(0); 
   };
 
   return (
