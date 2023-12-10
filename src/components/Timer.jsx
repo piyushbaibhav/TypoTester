@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function Timer(props) {
-  const { correctWords, startCounting, remainingTime } = props;
+  const { correctWords, startCounting, remainingTime, totalWordsAttempted } = props;
   const [timeElapsed, setTimeElapsed] = useState(0);
 
   useEffect(() => {
@@ -19,6 +19,8 @@ function Timer(props) {
   }, [startCounting, remainingTime]);
 
   const minutes = timeElapsed / 60;
+  const wordsPerMinute = (correctWords / minutes) || 0;
+  const accuracy = (correctWords / totalWordsAttempted) * 100 || 0;
 
   return (
     <div>
@@ -26,9 +28,9 @@ function Timer(props) {
         <b className='text-xl'>Time:</b> {remainingTime}
       </p>
       <p className='font-medium'>
-        <b className='text-xl'>Speed:</b> {((correctWords / minutes) || 0).toFixed(2)} WPM
+        <b className='text-xl'>Speed:</b> {wordsPerMinute.toFixed(2)} WPM &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b className='text-xl'>Accuracy:</b> {accuracy.toFixed(2)}%
       </p>
-    </div>
+      </div>
   );
 }
 

@@ -41,6 +41,8 @@ function App() {
   const [correctWordArray, setCorrectWordArray] = useState([]);
   const [selectedMode, setSelectedMode] = useState(15);
   const [remainingTime, setRemainingTime] = useState(selectedMode);
+  const [totalWordsAttempted, setTotalWordsAttempted] = useState(0);
+
 
   
 
@@ -85,15 +87,17 @@ function App() {
         newResult[activeWordIndex] = word === cloud.current[activeWordIndex];
         return newResult;
       });
-    } else {
-      setUserInput(value);
-    }
-  };
+     setTotalWordsAttempted((count) => count + 1);
+  } else {
+    setUserInput(value);
+  }
+};
 
   const handleModeSelection = (mode) => {
     setSelectedMode(mode);
     setRemainingTime(mode);
     setStartCounting(false); // Reset the counting when mode changes
+    setTotalWordsAttempted(0);
 
     // increase word count for 90 second
     const wordCount = mode === 90 ? 60 : 40;
@@ -130,6 +134,7 @@ function App() {
           startCounting={startCounting}
           correctWords={correctWordArray.filter(Boolean).length}
           remainingTime={remainingTime}
+          totalWordsAttempted={totalWordsAttempted}
         />
       </div>
 
