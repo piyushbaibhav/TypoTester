@@ -109,6 +109,7 @@ function App() {
     setUserInput('');
     setStartCounting(false);
     setCorrectWordArray([]);
+    setRemainingTime(selectedMode);
   };
 
   return (
