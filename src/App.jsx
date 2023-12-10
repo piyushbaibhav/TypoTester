@@ -94,6 +94,15 @@ function App() {
     setSelectedMode(mode);
     setRemainingTime(mode);
     setStartCounting(false); // Reset the counting when mode changes
+
+    // increase word count for 90 second
+    const wordCount = mode === 90 ? 60 : 40;
+    cloud.current = getCloud(wordCount);
+    setactiveWordIndex(0);
+    setUserInput('');
+    setStartCounting(false);
+    setCorrectWordArray([]);
+    setRemainingTime(mode);
   };
 
   const handleRestart = () => {
@@ -104,7 +113,7 @@ function App() {
     setRemainingTime(selectedMode);
   };
   const handleReloadWords = () => {
-    cloud.current = getCloud();
+    cloud.current = getCloud(selectedMode === 90 ? 80 : 40); // increase word count to 80
     setactiveWordIndex(0);
     setUserInput('');
     setStartCounting(false);
