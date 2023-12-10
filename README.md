@@ -1,8 +1,28 @@
-# React + Vite
+# TypoTester
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+- Typo Tester is a simple typing test application built with React. Test your typing speed and accuracy with randomly generated words.<br>This is my first project that I created independently, without any major help, and it took a lot of effort, but I enjoyed it.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Randomly generated word clouds for testing.
+- Adjustable difficulty modes.
+- Timer to track typing speed, accuracy, and remaining time.
+- Restart and reload buttons for a seamless testing experience.
+
+
+## Usage
+
+- Start typing in the input field as soon as the test begins.
+- The timer will track your typing speed and accuracy.
+- Retry or restart the test using the provided buttons.
+
+## Contribution
+
+- Feel free to fork my repo and create pull request.
+- If you have any questions or need help, feel free to reach out to me.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
