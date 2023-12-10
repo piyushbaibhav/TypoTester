@@ -42,6 +42,7 @@ function App() {
   const [selectedMode, setSelectedMode] = useState(15);
   const [remainingTime, setRemainingTime] = useState(selectedMode);
   const [totalWordsAttempted, setTotalWordsAttempted] = useState(0);
+  // const [correctWords, setCorrectWords] = useState(0);
 
 
   
@@ -116,6 +117,8 @@ function App() {
     setCorrectWordArray([]);
     setRemainingTime(selectedMode);
     setTotalWordsAttempted(0); 
+    setTimeElapsed(0);
+    // setCorrectWords(0);
   };
   const handleReloadWords = () => {
     cloud.current = getCloud(selectedMode === 90 ? 80 : 40); // increase word count to 80
@@ -125,6 +128,9 @@ function App() {
     setCorrectWordArray([]);
     setRemainingTime(selectedMode);
     setTotalWordsAttempted(0); 
+    setTimeElapsed(0);
+    // setCorrectWords(0);
+    //when restart the speed doesn't resart
   };
 
   return (
