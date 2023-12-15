@@ -6,6 +6,15 @@ import ModeSelection from './components/ModeSelection';
 import './App.css';
 import { generate } from 'random-words';
 import Footer from './components/Footer';
+import axios from 'axios';
+import { io } from 'socket.io-client';
+import {
+  initSocket,
+  disconnectSocket,
+  updateChallengeState,
+} from './api/socketModule.cjs';
+
+const socket = initSocket(); // Establish WebSocket connection
 
 const getCloud = (count = 40) => {
   const words = generate({ exactly: count, join: ' ' });
@@ -45,10 +54,17 @@ function App() {
   // const [correctWords, setCorrectWords] = useState(0);
 
 
-  
+
+  ////////// join a room 
+  const [roomId, setRoomId] = useState(null);
+  const [username, setUsername] = useState("");
+  const [roomUsersData, setRoomUsersData] = useState([]);
+  const roomUsers = [];
 
   useEffect(() => {
     let timer;
+
+    fetchData();
 
     if (startCounting && remainingTime > 0) {
       timer = setInterval(() => {
@@ -88,11 +104,13 @@ function App() {
         newResult[activeWordIndex] = word === cloud.current[activeWordIndex];
         return newResult;
       });
-     setTotalWordsAttempted((count) => count + 1);
-  } else {
-    setUserInput(value);
-  }
-};
+      setTotalWordsAttempted((count) => count + 1);
+    } else {
+      setUserInput(value);
+    }
+    //##b-end added
+    updateChallengeState();
+  };
 
   const handleModeSelection = (mode) => {
     setSelectedMode(mode);
@@ -108,6 +126,9 @@ function App() {
     setStartCounting(false);
     setCorrectWordArray([]);
     setRemainingTime(mode);
+
+    //##b-end added
+    updateChallengeState();
   };
 
   const handleRestart = () => {
@@ -116,9 +137,12 @@ function App() {
     setactiveWordIndex(0);
     setCorrectWordArray([]);
     setRemainingTime(selectedMode);
-    setTotalWordsAttempted(0); 
+    setTotalWordsAttempted(0);
     setTimeElapsed(0);
     // setCorrectWords(0);
+
+    //##b-end added
+    updateChallengeState();
   };
   const handleReloadWords = () => {
     cloud.current = getCloud(selectedMode === 90 ? 80 : 40); // increase word count to 80
@@ -127,10 +151,93 @@ function App() {
     setStartCounting(false);
     setCorrectWordArray([]);
     setRemainingTime(selectedMode);
-    setTotalWordsAttempted(0); 
+    setTotalWordsAttempted(0);
     setTimeElapsed(0);
     // setCorrectWords(0);
     //when restart the speed doesn't resart
+
+    //##b-end added
+    updateChallengeState();
+  };
+  /////////////////
+  useEffect(() => {
+
+    initSocket();
+    updateChallengeState(
+      socket,
+      startCounting,
+      activeWordIndex,
+      correctWordArray,
+      remainingTime,
+      totalWordsAttempted
+    );
+  }, [
+    socket,
+    startCounting,
+    activeWordIndex,
+    correctWordArray,
+    remainingTime,
+    totalWordsAttempted,
+  ]);
+
+  //////////////////////////
+  const handleRoomCreation = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/create-room"
+      );
+      console.log(response.data.newRoom);
+      const { roomId } = response.data.newRoom;
+      setRoomId(roomId);
+      socket.emit("joinRoom", { roomId, username });
+    } catch (error) {
+      console.error("Error creating room:", error);
+    }
+  };
+  ////////////////////
+
+  const handleRoomJoin = async () => {
+    const enteredRoomId = prompt("Enter the room ID:"); // You can replace this with your own way of getting a room ID
+    setRoomId(enteredRoomId);
+
+    try {
+      if (enteredRoomId) {
+        const enteredUsername = prompt("Enter your username:"); // You can replace this with your own way of getting a username
+
+        setUsername(enteredUsername);
+
+        console.log("prompt Acquired :", enteredRoomId, enteredUsername);
+        // Make a socket.io connection
+        const socket = await io("http://localhost:5000");
+        //console.log();
+
+        // Emit the 'joinRoom' event to the server
+        socket.emit("joinRoom", { roomId, username: enteredUsername });
+        socket.emit("userJoin", username);
+        socket.on("users", (data) => {
+          setRoomUsersData(data.rmusers);
+          roomUsers.push(data.rmusers);
+        });
+        // Redirect the user to the joined room or handle accordingly
+        // (You may use React Router for navigation)
+      }
+    } catch (error) {
+      console.error("Invalid room or username");
+    }
+  };
+  useEffect(() => {
+    return () => {
+      // Clean up resources when the component unmounts
+      if (socket) {
+        socket.disconnect();
+      }
+    };
+  }, [socket]);
+
+  // Handle user-initiated disconnection (e.g., leaving the room)
+  const handleDisconnect = () => {
+    disconnectSocket();
+    setRoomUsersData([]); // Clear the room users
   };
 
   return (
@@ -157,15 +264,51 @@ function App() {
         type="text"
         value={userInput}
         onChange={(e) => processInput(e.target.value)}
-        // autoFocus={false} 
+        // autoFocus={false}
       />
       <div className='flex-none my-4 '>
         <RestartButton onClick={handleRestart} />
         <ReloadButton onClick={handleReloadWords} />
       </div>
+
+      <div className="w-1/4 rounded bg-gray-500 p-4">
+        <h2 className="text-black  mb-2">Room Users :</h2>
+        <ul>
+          {roomUsersData.map((number, index) => (
+            <li key={index} className="mb-1">{`${index + 1}. ${
+              number.username
+            }`}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="flex-none my-4">
+        <button onClick={handleRoomCreation}>Create Room</button>
+        &nbsp;&nbsp; Rm-Id: {roomId} &nbsp;&nbsp;
+        {<button onClick={handleRoomJoin}>join Room</button>}
+        &nbsp;&nbsp;
+      </div>
+      <button
+        onClick={handleDisconnect}
+        className="my-4 text-black font-bold py-0 px-1  rounded bg-red-500"
+      >
+        Disconnect
+      </button>
+
       <Footer/>
     </div>
   );
+}
+
+// Make an API request TEST
+async function fetchData() {
+  try {
+    const response = await axios.get("http://localhost:5000/api/data");
+   // console.log(response.data);
+    // Handle the data as needed in your frontend
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
 
 export default App;
