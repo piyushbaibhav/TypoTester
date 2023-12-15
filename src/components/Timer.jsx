@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function Timer(props) {
-  const { correctWords, startCounting, remainingTime, totalWordsAttempted } = props;
-  const [timeElapsed, setTimeElapsed] = useState(0);
+  const { correctWords, startCounting, remainingTime, totalWordsAttempted, timeElapsed, setTimeElapsed } = props;
 
   useEffect(() => {
     let id;
@@ -19,7 +18,7 @@ function Timer(props) {
   }, [startCounting, remainingTime]);
 
   const minutes = timeElapsed / 60;
-  const wordsPerMinute = (correctWords / minutes) || 0;
+  const wordsPerMinute = (minutes > 0 ? correctWords / minutes : 0);
   const accuracy = (correctWords / totalWordsAttempted) * 100 || 0;
 
   return (
