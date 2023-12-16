@@ -9,7 +9,7 @@ const server = http.createServer(app);
 //const { io, updateChallengeState, userJoin } = setupWebSocket(server);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173', // Replace with the origin of your React application
+    origin: 'https://typo-tester-exun6e1x5-marwans-projects-89c0b6a9.vercel.app/',//http://localhost:5173', // Replace with the origin of your React application
     methods: ['GET', 'POST'],
   },
 });
@@ -17,7 +17,7 @@ const PORT = 5000; // Choose a suitable port
 
 app.use(bodyParser.json());
 const corsOptions = {
-  origin: 'http://localhost:5173', // Replace with the origin of your React application
+  origin: 'https://typo-tester-exun6e1x5-marwans-projects-89c0b6a9.vercel.app/',//http://localhost:5173', // Replace with the origin of your React application
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
