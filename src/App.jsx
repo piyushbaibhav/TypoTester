@@ -217,6 +217,7 @@ function App() {
         socket.on("users", (data) => {
           setRoomUsersData(data.rmusers);
           roomUsers.push(data.rmusers);
+          console.log(roomUsersData);
         });
         // Redirect the user to the joined room or handle accordingly
         // (You may use React Router for navigation)
