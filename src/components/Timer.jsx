@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 function Timer(props) {
   const { correctWords, startCounting, remainingTime, totalWordsAttempted, timeElapsed, setTimeElapsed } = props;
 
+
   useEffect(() => {
     let id;
 
