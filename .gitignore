@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+api/package.json
+api/package-lock.json
+api/app.js
+ole.log(this is ro-users, setRoomUsers);
