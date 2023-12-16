@@ -51,6 +51,7 @@ function App() {
   const [selectedMode, setSelectedMode] = useState(15);
   const [remainingTime, setRemainingTime] = useState(selectedMode);
   const [totalWordsAttempted, setTotalWordsAttempted] = useState(0);
+  const [timeElapsed, setTimeElapsed] = useState(0);
   // const [correctWords, setCorrectWords] = useState(0);
 
 
@@ -251,6 +252,8 @@ function App() {
           correctWords={correctWordArray.filter(Boolean).length}
           remainingTime={remainingTime}
           totalWordsAttempted={totalWordsAttempted}
+          timeElapsed={timeElapsed}
+          setTimeElapsed={setTimeElapsed}
         />
       </div>
 
