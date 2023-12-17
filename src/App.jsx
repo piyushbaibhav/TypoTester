@@ -17,7 +17,7 @@ import {
 
 const socket = initSocket(); // Establish WebSocket connection
 const corsOptions = {
-  origin: 'http://localhost:5000', // Replace with the origin of your React application
+  origin: true, // Replace with the origin of your React application
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   //credentials: true,
   optionsSuccessStatus: 204,
