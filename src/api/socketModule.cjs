@@ -3,12 +3,11 @@
 import { io } from 'socket.io-client';
 
 
-const socket = io("https://typo-server.vercel.app",{ transports: ['websocket'] });
+const socket = io("https://typo-server.vercel.app");
 
 // Event listeners and other socket-related code
 export const initSocket = () => {
-  if (socket) {
-  
+  return  if (socket) {
 
   // Listen for typing challenge state updates from the server
   socket.on("challengeState", (challengeState) => {
