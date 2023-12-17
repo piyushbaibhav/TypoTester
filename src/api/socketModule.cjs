@@ -1,6 +1,6 @@
 // socketModule.js
 
-import { io } from 'socket.io-client';
+import { io } from 'socket.io';
 
 
 const socket = io("http://localhost:5000");
