@@ -4,11 +4,6 @@ import { io } from 'socket.io-client';
 
 
 const socket = io("https://typo-server.vercel.app/"), { transports: ['websocket'] });
-//   (server, {
-//     cors: {
-//       origin: '*',
-//     }
-// });
 
 // Event listeners and other socket-related code
 export const initSocket = () => {
