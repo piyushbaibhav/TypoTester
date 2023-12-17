@@ -1,6 +1,6 @@
 // socketModule.js
 
-import { io } from 'socket.io';
+import { io } from 'socket.io-client';
 
 
 const socket = io("https://typo-server.vercel.app/");
