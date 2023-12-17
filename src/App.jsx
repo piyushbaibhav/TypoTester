@@ -210,7 +210,7 @@ function App() {
 
         console.log("prompt Acquired :", enteredRoomId, enteredUsername);
         // Make a socket.io connection
-        const socket = await io("https://typo-server.vercel.app/api/create-room");
+        const socket = await io("https://typo-server.vercel.app");
         //console.log();
 
         // Emit the 'joinRoom' event to the server
