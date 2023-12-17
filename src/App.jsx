@@ -8,7 +8,7 @@ import { generate } from 'random-words';
 import Footer from './components/Footer';
 import axios from 'axios';
 import { io } from 'socket.io-client';
-import { cors } from 'cors';
+
 import {
   initSocket,
   disconnectSocket,
@@ -16,14 +16,6 @@ import {
 } from './api/socketModule.cjs';
 
 const socket = initSocket(); // Establish WebSocket connection
-const corsOptions = {
-  origin: true, // Replace with the origin of your React application
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  //credentials: true,
-  optionsSuccessStatus: 204,
-};
-io.use(cors(corsOptions));
-
 
 const getCloud = (count = 40) => {
   const words = generate({ exactly: count, join: ' ' });
