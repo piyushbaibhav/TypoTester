@@ -186,7 +186,7 @@ function App() {
   const handleRoomCreation = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/create-room"
+        "https://typo-server.vercel.app/api/create-room"
       );
       console.log(response.data.newRoom);
       const { roomId } = response.data.newRoom;
