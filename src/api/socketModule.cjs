@@ -3,7 +3,7 @@
 import { io } from 'socket.io-client';
 
 
-const socket = io("https://typo-server.vercel.app/");
+const socket = io("https://soft-troubled-holiday.glitch.me");
 
 // Event listeners and other socket-related code
 export const initSocket = () => {
