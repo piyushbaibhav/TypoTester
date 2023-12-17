@@ -308,7 +308,7 @@ function App() {
 // Make an API request TEST
 async function fetchData() {
   try {
-    const response = await axios.get("http://localhost:5000/api/data");
+    const response = await axios.get("https://typo-server.vercel.app/api/data");
    // console.log(response.data);
     // Handle the data as needed in your frontend
   } catch (error) {
