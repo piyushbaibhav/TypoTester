@@ -3,7 +3,12 @@
 import { io } from 'socket.io-client';
 
 
-const socket = io('https://typo-server.vercel.app/');
+const socket = io("http://localhost:5000");
+//   (server, {
+//     cors: {
+//       origin: '*',
+//     }
+// });
 
 // Event listeners and other socket-related code
 export const initSocket = () => {
