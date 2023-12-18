@@ -199,13 +199,13 @@ function App() {
   ////////////////////
 
   const handleRoomJoin = async () => {
-    const enteredRoomId = prompt("Enter the room ID:"); // You can replace this with your own way of getting a room ID
+        const enteredRoomId = prompt("Enter the room ID:"); // You can replace this with your own way of getting a room ID
         const enteredUsername = prompt("Enter your username:"); // You can replace this with your own way of getting a username
 
     try {
-      if (enteredRoomId) {
+      if (enteredUsername) {
 
-    setRoomId(enteredRoomId);
+        setRoomId(enteredRoomId);
         setUsername(enteredUsername);
 
         console.log("prompt Acquired :", enteredRoomId, enteredUsername);
