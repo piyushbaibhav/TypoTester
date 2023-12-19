@@ -209,7 +209,7 @@ function App() {
         setUsername(enteredUsername);
 
         // Make a socket.io connection
-        const socket = io("https://typo-server.vercel.app");
+        //const socket = io("https://typo-server.vercel.app");
         //console.log();
      socket.on('joinRoom', (data) => {
         // Emit the 'joinRoom' event to the server
