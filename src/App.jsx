@@ -186,7 +186,7 @@ function App() {
   const handleRoomCreation = async () => {
     try {
       const response = await axios.post(
-        "https://soft-troubled-holiday.glitch.me/api/create-room"
+        "https://typo-server.vercel.app/api/create-room"
       );
       console.log(response.data.newRoom);
       const { roomId } = response.data.newRoom;
@@ -312,7 +312,7 @@ function App() {
 // Make an API request TEST
 async function fetchData() {
   try {
-    const response = await axios.get("https://soft-troubled-holiday.glitch.me");
+    const response = await axios.get("https://typo-server.vercel.app/");
     console.log(response.data);
     // Handle the data as needed in your frontend
   } catch (error) {
