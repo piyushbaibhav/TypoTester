@@ -208,11 +208,12 @@ function App() {
         setRoomId(enteredRoomId);
         setUsername(enteredUsername);
 
-        console.log("prompt Acquired :", enteredRoomId, enteredUsername);
         // Make a socket.io connection
         const socket = io("https://typo-server.vercel.app");
         //console.log();
-
+        socket.on("connect_error", (err) => {
+  console.log(`connect_error due to ${err.message}`);
+});
         // Emit the 'joinRoom' event to the server
         socket.emit("joinRoom", { roomId, username: enteredUsername });
         socket.emit("userJoin", username);
@@ -220,6 +221,7 @@ function App() {
           setRoomUsersData(data.rmusers);
           roomUsers.push(data.rmusers);
           console.log(roomUsersData);
+        console.log("prompt Acquired :", enteredRoomId, enteredUsername);
         });
         // Redirect the user to the joined room or handle accordingly
         // (You may use React Router for navigation)
