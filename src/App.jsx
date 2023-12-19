@@ -59,7 +59,7 @@ function App() {
 
   ////////// join a room 
   const [roomId, setRoomId] = useState(null);
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState(null);
   const [roomUsersData, setRoomUsersData] = useState([]);
   const roomUsers = [];
 
