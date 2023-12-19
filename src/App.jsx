@@ -59,7 +59,7 @@ function App() {
 
   ////////// join a room 
   const [roomId, setRoomId] = useState(null);
-  const [username, setUsername] = useState(null);
+  
   const [roomUsersData, setRoomUsersData] = useState([]);
   const roomUsers = [];
 
@@ -207,17 +207,9 @@ function App() {
 
         setRoomId(enteredRoomId);
         setUsername(enteredUsername);
-
-        // Make a socket.io connection
-        //const socket = io("https://typo-server.vercel.app");
-        //console.log();
-    // socket.on('joinRoom', (data) => {
-        // Emit the 'joinRoom' event to the server
+        
         socket.emit("joinRoom", { roomId, username: enteredUsername });
-    // })
-         //socket.on('userJoin', (data) => {
         socket.emit("userJoin", username);
-        // })
         socket.on("users", (data) => {
           setRoomUsersData(data.rmusers);
           roomUsers.push(data.rmusers);
@@ -231,14 +223,14 @@ function App() {
       console.error("Invalid room or username");
     }
   };
-  // useEffect(() => {
-  //   return () => {
-  //     // Clean up resources when the component unmounts
-  //     if (socket) {
-  //       socket.disconnect();
-  //     }
-  //   };
-  // }, [socket]);
+  useEffect(() => {
+    return () => {
+      // Clean up resources when the component unmounts
+      if (socket) {
+        socket.disconnect();
+      }
+    };
+  }, [socket]);
 
   // Handle user-initiated disconnection (e.g., leaving the room)
   const handleDisconnect = () => {
@@ -281,7 +273,7 @@ function App() {
 
       <div className="w-1/4 rounded bg-gray-500 p-4">
         <h2 className="text-black  mb-2">Room Users :</h2>
-        <ul>
+        <ul>{roomUsers.map((user, index) => (
             <li key={index} className="mb-1">{`${index + 1}. ${
               number.username
             }`}</li>
