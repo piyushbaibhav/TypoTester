@@ -228,14 +228,14 @@ function App() {
       console.error("Invalid room or username");
     }
   };
-  useEffect(() => {
-    return () => {
-      // Clean up resources when the component unmounts
-      if (socket) {
-        socket.disconnect();
-      }
-    };
-  }, [socket]);
+  // useEffect(() => {
+  //   return () => {
+  //     // Clean up resources when the component unmounts
+  //     if (socket) {
+  //       socket.disconnect();
+  //     }
+  //   };
+  // }, [socket]);
 
   // Handle user-initiated disconnection (e.g., leaving the room)
   const handleDisconnect = () => {
