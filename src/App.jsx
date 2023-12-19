@@ -211,13 +211,13 @@ function App() {
         // Make a socket.io connection
         //const socket = io("https://typo-server.vercel.app");
         //console.log();
-     socket.on('joinRoom', (data) => {
+    // socket.on('joinRoom', (data) => {
         // Emit the 'joinRoom' event to the server
         socket.emit("joinRoom", { roomId, username: enteredUsername });
-     })
-         socket.on('userJoin', (data) => {
+    // })
+         //socket.on('userJoin', (data) => {
         socket.emit("userJoin", username);
-         })
+        // })
         socket.on("users", (data) => {
           setRoomUsersData(data.rmusers);
           roomUsers.push(data.rmusers);
