@@ -283,9 +283,10 @@ function App() {
         <h2 className="text-black  mb-2">Room Users :</h2>
         <ul>
           {roomUsersData.map((number, index) => (
+            if(number.username != ""){
             <li key={index} className="mb-1">{`${index + 1}. ${
               number.username
-            }`}</li>
+            }`}}</li>
           ))}
         </ul>
       </div>
