@@ -186,7 +186,7 @@ function App() {
   const handleRoomCreation = async () => {
     try {
       const response = await axios.post(
-        "https://typo-server.vercel.app/api/create-room"
+        "https://chocolate-dhole-ring.cyclic.app//api/create-room"
       );
       console.log(response.data.newRoom);
       const { roomId } = response.data.newRoom;
@@ -302,7 +302,7 @@ function App() {
 // Make an API request TEST
 async function fetchData() {
   try {
-    const response = await axios.get("https://typo-server.vercel.app/");
+    const response = await axios.get("https://chocolate-dhole-ring.cyclic.app/");
     console.log(response.data);
     // Handle the data as needed in your frontend
   } catch (error) {
