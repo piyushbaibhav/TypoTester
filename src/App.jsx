@@ -186,7 +186,7 @@ function App() {
   const handleRoomCreation = async () => {
     try {
       const response = await axios.post(
-        "https://chocolate-dhole-ring.cyclic.app//api/create-room"
+        "https://axios-server.vercel.app/api/create-room"
       );
       console.log(response.data.newRoom);
       const { roomId } = response.data.newRoom;
@@ -302,7 +302,7 @@ function App() {
 // Make an API request TEST
 async function fetchData() {
   try {
-    const response = await axios.get("https://chocolate-dhole-ring.cyclic.app/");
+    const response = await axios.get("https://axios-server.vercel.app/");
     console.log(response.data);
     // Handle the data as needed in your frontend
   } catch (error) {
