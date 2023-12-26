@@ -274,7 +274,7 @@ function App() {
 
       <div className="w-1/4 rounded bg-gray-500 p-4">
         <h2 className="text-black  mb-2">Room Users :</h2>
-        <ul>{roomUsers.map((user, index) => (
+        <ul>{roomUsersData.map((user, index) => (
             <li key={index} className="mb-1">{`${index + 1}. ${
               user.username
             }`}</li>
