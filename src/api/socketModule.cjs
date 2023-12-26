@@ -3,12 +3,12 @@
 import { io } from 'socket.io-client';
 
 
-const socket = io(`${process.env.VERCEL_URL}`, { transports: ['websocket'] });
+const socket = io("https://soft-troubled-holiday.glitch.me" , { transports: ['websocket'] });
 
 // Event listeners and other socket-related code
 export const initSocket = () => {
   if (socket) {
-  s
+  
 
   // Listen for typing challenge state updates from the server
   socket.on("challengeState", (challengeState) => {

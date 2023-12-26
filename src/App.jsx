@@ -7,7 +7,7 @@ import './App.css';
 import { generate } from 'random-words';
 import Footer from './components/Footer';
 import axios from 'axios';
-import { io } from 'socket.io-client';
+
 import {
   initSocket,
   disconnectSocket,
@@ -51,13 +51,14 @@ function App() {
   const [selectedMode, setSelectedMode] = useState(15);
   const [remainingTime, setRemainingTime] = useState(selectedMode);
   const [totalWordsAttempted, setTotalWordsAttempted] = useState(0);
+  const [timeElapsed, setTimeElapsed] = useState(0);
   // const [correctWords, setCorrectWords] = useState(0);
 
 
 
   ////////// join a room 
   const [roomId, setRoomId] = useState(null);
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState(null);
   const [roomUsersData, setRoomUsersData] = useState([]);
   const roomUsers = [];
 
@@ -184,9 +185,9 @@ function App() {
   const handleRoomCreation = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/create-room"
+        "https://soft-troubled-holiday.glitch.me/api/create-room"
       );
-      //console.log(response.data.newRoom);
+      console.log(response.data.newRoom);
       const { roomId } = response.data.newRoom;
       setRoomId(roomId);
       socket.emit("joinRoom", { roomId, username });
@@ -197,28 +198,24 @@ function App() {
   ////////////////////
 
   const handleRoomJoin = async () => {
-    const enteredRoomId = prompt("Enter the room ID:"); // You can replace this with your own way of getting a room ID
-    setRoomId(enteredRoomId);
-
-    try {
-      if (enteredRoomId) {
+        const enteredRoomId = prompt("Enter the room ID:"); // You can replace this with your own way of getting a room ID
         const enteredUsername = prompt("Enter your username:"); // You can replace this with your own way of getting a username
 
+    try {
+      if (enteredUsername) {
+
+        setRoomId(enteredRoomId);
         setUsername(enteredUsername);
-
-        // console.log("prompt Acquired :", enteredRoomId, enteredUsername);
-        // Make a socket.io connection
-        const socket = await io("http://localhost:5000");
-        //console.log();
-
-        // Emit the 'joinRoom' event to the server
+        
         socket.emit("joinRoom", { roomId, username: enteredUsername });
         socket.emit("userJoin", username);
+
         socket.on("users", (data) => {
           setRoomUsersData(data.rmusers);
           roomUsers.push(data.rmusers);
-          // console.log('here',roomUsersData);
+          console.log(roomUsersData);
         });
+        console.log("prompt Acquired :", enteredRoomId, enteredUsername);
         // Redirect the user to the joined room or handle accordingly
         // (You may use React Router for navigation)
       }
@@ -251,6 +248,8 @@ function App() {
           correctWords={correctWordArray.filter(Boolean).length}
           remainingTime={remainingTime}
           totalWordsAttempted={totalWordsAttempted}
+          timeElapsed={timeElapsed}
+          setTimeElapsed={setTimeElapsed}
         />
       </div>
 
@@ -274,8 +273,7 @@ function App() {
 
       <div className="w-1/4 rounded bg-gray-500 p-4">
         <h2 className="text-black  mb-2">Room Users :</h2>
-        <ul>
-          {roomUsersData.map((user, index) => (
+        <ul>{roomUsers.map((user, index) => (
             <li key={index} className="mb-1">{`${index + 1}. ${
               user.username
             }`}</li>
@@ -304,8 +302,8 @@ function App() {
 // Make an API request TEST
 async function fetchData() {
   try {
-    const response = await axios.get("http://localhost:5000/api/data");
-   // console.log(response.data);
+    const response = await axios.get("https://soft-troubled-holiday.glitch.me");
+    console.log(response.data);
     // Handle the data as needed in your frontend
   } catch (error) {
     console.error("Error fetching data:", error);
