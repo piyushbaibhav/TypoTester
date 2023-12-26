@@ -186,7 +186,7 @@ function App() {
       const response = await axios.post(
         "http://localhost:5000/api/create-room"
       );
-      console.log(response.data.newRoom);
+      //console.log(response.data.newRoom);
       const { roomId } = response.data.newRoom;
       setRoomId(roomId);
       socket.emit("joinRoom", { roomId, username });
@@ -206,7 +206,7 @@ function App() {
 
         setUsername(enteredUsername);
 
-        console.log("prompt Acquired :", enteredRoomId, enteredUsername);
+        // console.log("prompt Acquired :", enteredRoomId, enteredUsername);
         // Make a socket.io connection
         const socket = await io("http://localhost:5000");
         //console.log();
@@ -217,7 +217,7 @@ function App() {
         socket.on("users", (data) => {
           setRoomUsersData(data.rmusers);
           roomUsers.push(data.rmusers);
-          console.log(roomUsersData);
+          // console.log('here',roomUsersData);
         });
         // Redirect the user to the joined room or handle accordingly
         // (You may use React Router for navigation)
@@ -275,9 +275,9 @@ function App() {
       <div className="w-1/4 rounded bg-gray-500 p-4">
         <h2 className="text-black  mb-2">Room Users :</h2>
         <ul>
-          {roomUsersData.map((number, index) => (
+          {roomUsersData.map((user, index) => (
             <li key={index} className="mb-1">{`${index + 1}. ${
-              number.username
+              user.username
             }`}</li>
           ))}
         </ul>
