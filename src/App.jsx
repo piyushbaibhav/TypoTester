@@ -214,6 +214,7 @@ function App() {
           setRoomUsersData(data.rmusers);
           roomUsers.push(data.rmusers);
           console.log(roomUsersData);
+        console.log("prompt Acquired :", enteredRoomId, enteredUsername);
         });
         console.log("prompt Acquired :", enteredRoomId, enteredUsername);
         // Redirect the user to the joined room or handle accordingly
