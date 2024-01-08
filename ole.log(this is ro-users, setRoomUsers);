@@ -1,0 +1,287 @@
+[33mcommit 369f18c9d231a035e0eb3e85332a72e370bf16dd[m[33m ([m[1;36mHEAD -> [m[1;32mupdated-with-backend-api-for-users[m[33m)[m
+Author: Marwan <marwan00mr@gmail.com>
+Date:   Fri Dec 15 23:29:19 2023 +0200
+
+    updated with api and room buttons and users panel
+
+[33mcommit 0c8ab40441438b1fa4068cbceadb62e2c0ac432e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 20:24:09 2023 +0530
+
+    bug
+
+[33mcommit cb144cbae82ef6ca2d36591f8867772c4a31e4a1[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 20:01:32 2023 +0530
+
+    bug fix
+
+[33mcommit 772db02cb51944b66e0fcc3d8bf679e604084747[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 19:42:47 2023 +0530
+
+    added accuracy
+
+[33mcommit 2974719fca4d25bdf41db04c24d3d25b932e5b26[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 19:05:08 2023 +0530
+
+    fun
+
+[33mcommit 79809e324acb725247478fc0563718ebd8db16b6[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 19:03:56 2023 +0530
+
+    80 words for 90 second mode
+
+[33mcommit d948dcceba4233ea1be160903b1939fe5a831081[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 18:27:50 2023 +0530
+
+    restart button bug
+
+[33mcommit 06d9ce703b5161e6af04273545daff6b015dc416[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:47:02 2023 +0530
+
+    finished
+
+[33mcommit 62a5a179157bfcf28276fff12f62cd332c571663[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:44:28 2023 +0530
+
+    readme
+
+[33mcommit bf94f88a8f74e06c24a16500508319b1277e231e[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:37:23 2023 +0530
+
+    vite svg change
+
+[33mcommit 0eb1ab8dce7a06d62422de11e2445a2794e2e091[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:33:47 2023 +0530
+
+    style
+
+[33mcommit 3c60e312c5b919c50e92722369b7e2a288af557b[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:28:58 2023 +0530
+
+    style
+
+[33mcommit b80e712a754ae8ee98b9a237f4b9819af0f594d1[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:19:05 2023 +0530
+
+    style
+
+[33mcommit 6c415320c11f479517c1f46a61424637987cce49[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:14:38 2023 +0530
+
+    style
+
+[33mcommit 2e319a82b630dc13f806af411a7c83a9e282f416[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:11:00 2023 +0530
+
+    links
+
+[33mcommit 6d4c8e5da0c0fa6cc882ab3479c1b43ddd052f1b[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:07:09 2023 +0530
+
+    added footer
+
+[33mcommit 199d064e0b63167536872fb484617ddc82314825[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 05:02:57 2023 +0530
+
+    style
+
+[33mcommit 3fd37ce4cd9b2d827d511cc81f5219f6c3b194d0[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 04:50:04 2023 +0530
+
+    overflow hidden
+
+[33mcommit 345f6cf471f28f2960cb90df4940ecafab95dc37[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 04:48:04 2023 +0530
+
+    style
+
+[33mcommit 1415d449e8d74fccd942253703a33cd9b0eccc98[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 04:43:52 2023 +0530
+
+    reset and restart button
+
+[33mcommit b9c0b55487a5d0b760853e8a45c9f7c22bc08307[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 04:33:19 2023 +0530
+
+    reset button
+
+[33mcommit 957d403d9468739160b5fa56930e835ba1dcd252[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 04:22:04 2023 +0530
+
+    style
+
+[33mcommit bb313139991a471cf1721d69ff1961801d5e0953[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 04:01:25 2023 +0530
+
+    style
+
+[33mcommit f2fd80e4cf5d2610b8f378fcff791f12dcea3a11[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 03:47:37 2023 +0530
+
+    style
+
+[33mcommit 701ab692bce955431dd8cf557aa186896d074dc3[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 03:17:14 2023 +0530
+
+    bugs
+
+[33mcommit a2bc89d528ee6f99bfdbeb599cbdd17b0f04284d[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 03:10:31 2023 +0530
+
+    speed logic correction
+
+[33mcommit 7913f77b4a5b24c720abfbdb72b700407a0c6c5f[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 03:10:05 2023 +0530
+
+    timer modes
+
+[33mcommit 7f8262758d1c23389e3a50922d74b9fe83d697aa[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 02:32:14 2023 +0530
+
+    .
+
+[33mcommit 8152f77fa84c6023e43311c57d3b8b10eda6d949[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 02:10:36 2023 +0530
+
+    style
+
+[33mcommit 6efb45e07f4d4b2023028b87d5eae92b1d23365c[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 01:28:59 2023 +0530
+
+    uninstall chance
+
+[33mcommit 56a299d32bdc37bb85952da8d3ba3065c22bee29[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 01:28:09 2023 +0530
+
+    using library for random words
+
+[33mcommit 6583cd90b406005b4f5b7080e9d7566678c52179[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 01:10:55 2023 +0530
+
+    jumbled word
+
+[33mcommit 9993ddbde1009998e0ebc38f301ffd8d140f6f5e[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sun Dec 10 01:06:47 2023 +0530
+
+    bug
+
+[33mcommit ef0ccf3e70b05853e3346cbe37c5585f640fd7b2[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 23:43:55 2023 +0530
+
+    bugs and last word check fixed
+
+[33mcommit d1dbe401f818205b7ea266598d1aaf3d11979a48[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 23:32:40 2023 +0530
+
+    stoping time after completion
+
+[33mcommit 9d316bda70564019c131fd31d77fc136fcd18489[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 23:08:46 2023 +0530
+
+    WPM
+
+[33mcommit ba8ab5c68ef90f0c65da17bfd37d525eb9c053f1[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 23:05:33 2023 +0530
+
+    WPM logic
+
+[33mcommit 83f42c907d1dbd89d21a3933f86b257b4a78421d[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 20:36:19 2023 +0530
+
+    timer
+
+[33mcommit fc59b06cedba966a0f4b9e6fa7a6c7cba18612bf[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 19:56:03 2023 +0530
+
+    creating components
+
+[33mcommit 9a6a8e7850ee3d476adca0953dcf5e0525c53290[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 19:30:58 2023 +0530
+
+    decreasing renders
+
+[33mcommit dc3904ab0c6634f5e0be4bc87ad0ad400a9e6f37[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 17:30:30 2023 +0530
+
+    logic for correct n incorrect
+
+[33mcommit ca6712e15d369b1d050fa93a30015b99ab9da033[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 17:10:40 2023 +0530
+
+    wordr is correct or incorrect
+
+[33mcommit a35a3bfd991083491775f0582b73428e8ecb87e5[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 03:15:38 2023 +0530
+
+    optimizing
+
+[33mcommit 9cbdcea62c5b29287052d60120ade9d9f28d5695[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 02:23:59 2023 +0530
+
+    move to next word after space
+
+[33mcommit cb367558f64c59c0f85b8cf4357d7b84df6acff2[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 02:14:58 2023 +0530
+
+    bold the current word
+
+[33mcommit 24c71119911964b2380910e1d1921b856da3bf09[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 02:03:42 2023 +0530
+
+    word cloud display
+
+[33mcommit 8d2afc5f29a6d8c84ca2893439284c26b2d296e8[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 01:55:17 2023 +0530
+
+    input field for typing
+
+[33mcommit 3d67254a6e35dd021c93376b7bee85bd5bc2f275[m
+Author: piyushbaibhav <piyushbaibhav12@gmail.com>
+Date:   Sat Dec 9 01:19:16 2023 +0530
+
+    first commit

@@ -49,3 +49,72 @@
 .word.active {
   text-decoration: underline; /* Apply underline when active */
 }
+/* Add this to your App.css file */
+
+/* Styling for Retry Button */
+button.hover:underline {
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button.hover:underline:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+}
+
+/* Styling for Restart Button */
+button.hover:underline {
+  cursor: pointer;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button.hover:underline:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+/* Styling for Create Room and Join Room Buttons */
+button {
+  cursor: pointer;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: rgb(111, 137, 206);
+  color: black;
+  border: 2px solid #008CBA;
+}
