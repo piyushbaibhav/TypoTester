@@ -7,7 +7,7 @@ function Footer() {
       <a className="mr-4" href="https://github.com/piyushbaibhav" target="_blank" rel="noopener noreferrer">
         GitHub
       </a>
-      <a className="mr-4" href="https://www.linkedin.com/in/piyush-baibhav-02098b272/" target="_blank" rel="noopener noreferrer">
+      <a className="mr-4" href="https://www.linkedin.com/in/piyushbaibhav/" target="_blank" rel="noopener noreferrer">
         LinkedIn
       </a>
       <a href="https://github.com/piyushbaibhav/TypoTester" target="_blank" rel="noopener noreferrer">
